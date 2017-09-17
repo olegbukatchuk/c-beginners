@@ -5,13 +5,13 @@
 #include <stdio.h>
 
 int bounce(int a);
-int caller(int(*function) (int), int b);
+int caller(int (*function)(int), int b);
 
 int main() {
     int num;
-    int (*fptr) (int) = bounce;
+    int (*fptr)(int) = bounce;
 
-    num = (*fptr) (10);
+    num = (*fptr)(10);
     printf("Returned Value: %d\n", num);
 
     num = caller(fptr, 5);
@@ -25,6 +25,6 @@ int bounce(int a) {
     return ((3 * a) + 3);
 }
 
-int caller(int (*function) (int), int b) {
-    (function*) (b);
+int caller(int (*function)(int), int b) {
+    return (*function)(b);
 }
