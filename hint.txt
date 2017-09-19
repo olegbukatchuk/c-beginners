@@ -1,0 +1,2 @@
+fscanf and fprintf are flexible
+12345678910
